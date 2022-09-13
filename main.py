@@ -10,7 +10,7 @@ app = FastAPI(title="Recipe API")
 
 @app.on_event("startup")
 async def startup_event():
-    connect(host='mongodb://localhost:27017/cooking_recipe')
+    connect(host='mongodb://mob-mongo:27017/cooking_recipe')
 
 
 @app.on_event("shutdown")
@@ -43,5 +43,4 @@ async def get_recipe_by_name(recipe_name: str) -> schemas.FullRecipe:
 
 if __name__ == '__main__':
     import uvicorn
-
-    uvicorn.run('main:app', host='localhost', port=8001, log_level="debug", reload=True)
+    uvicorn.run('main:app', host='0.0.0.0', port=8080, log_level="debug", reload=True)

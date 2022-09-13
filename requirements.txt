@@ -1,0 +1,4 @@
+mongoengine~=0.24.2
+uvicorn~=0.18.3
+fastapi~=0.82.0
+pydantic~=1.10.1
