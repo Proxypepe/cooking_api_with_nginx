@@ -4,8 +4,18 @@ from fastapi import FastAPI, HTTPException
 from mongoengine import connect, disconnect
 import src.schemas.recipe as schemas
 import src.models.recipe as models
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI(title="Recipe API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*'],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.on_event("startup")
