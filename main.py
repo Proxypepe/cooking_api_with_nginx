@@ -20,7 +20,7 @@ app.add_middleware(
 
 @app.on_event("startup")
 async def startup_event():
-    connect(host='mongodb://mob-mongo:27017/cooking_recipe')
+    connect(host='mongodb://admin:admin@mob-mongo:27017/cooking_recipe?authSource=admin')
 
 
 @app.on_event("shutdown")

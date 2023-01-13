@@ -2,7 +2,7 @@ from src.models.recipe import Recipe
 from mongoengine import connect, disconnect
 
 if __name__ == '__main__':
-    connect(host='mongodb://localhost:27017/cooking_recipe')
+    connect(host='mongodb://admin:admin@127.0.0.1:27019/cooking_recipe?authSource=admin')
     Recipe(
         name="Slow Cooker Salisbury Steak",
         description="This Salisbury steak recipe comes together quickly and does not need a lot of time in the slow "
